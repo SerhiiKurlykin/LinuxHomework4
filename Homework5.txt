@@ -1,0 +1,31 @@
+
+[ec2-user@ip-172-31-33-20 ~]$ cd /opt/130824_morning/serhii_kurlykin/
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ touch myfirstbashscript.sh
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ chmod +x myfirstbashscript.sh
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ vi myfirstbashscript.sh
+
+
+
+
+  1 #!/bin/bash
+  2 USER="Serhii"
+  3 echo "Текущая дата: $(date)"
+  4 echo "Hello, $USER!"
+  5 echo "Текущая рабочая директория: $(pwd)"
+  6 PROC_COUNT=$(ps -e | wc -l)
+  7 echo "Количество процессов: $((PROC_COUNT - 1))"
+  8 BIOSET_COUNT=$(ps -ef | grep bioset | grep -v grep | wc -l)
+  9 echo "Количество процессов с именем bioset: $BIOSET_COUNT"
+ 10 PERMISSIONS=$(ls -l /etc/passwd | awk '{print $1}')
+ 11 echo "Права на файл /etc/passwd: $PERMISSIONS"
+
+
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ ./myfirstbashscript.sh
+Текущая дата: Mon Sep 30 18:52:08 UTC 2024
+Hello, Serhii!
+Текущая рабочая директория: /opt/130824_morning/serhii_kurlykin
+Количество процессов: 119
+Количество процессов с именем bioset: 0
+Права на файл /etc/passwd: -rw-r--r--
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$
+

@@ -1,0 +1,28 @@
+  
+ cd /opt/130824_morning/serhii_kurlykin/
+ serhii_kurlykin]$ touch sleeper.sh
+ serhii_kurlykin]$ chmod +x sleeper.sh
+ serhii_kurlykin]$ vim sleeper.sh
+
+
+
+
+
+
+
+
+ 1 #!/bin/bash
+  2 for i in {1..10}
+  3 do
+  4 date +"%H:%M:%S"
+  5 ps -ef | wc -l
+  6 sleep 5  # sleep 2
+  7 done
+  8 grep "vendor_id" /proc/cpuinfo > info.txt
+  9 grep "^NAME=" /etc/os-release >> info.txt
+ 10 grep "^NAME=" /etc/os-release | awk -F '=' '{print $2}' >> info.txt
+ 11 touch {50..100}.txt
+
+
+./sleeper.sh
+

@@ -1,0 +1,24 @@
+  1 #!/bin/bash
+  2 echo "Hello Student!"
+  3 echo  "Enter your name "
+  4 read name
+  5 echo "Welcome to terminal $name"
+  6 mkdir -p /tmp/test
+  7 touch /tmp/test/mydate.txt
+  8 date +"%T" > /tmp/test/mydate.txt
+  9 echo "Save Data"
+ 10 for i in {10..1}; do
+ 11 echo $i
+ 12 sleep 0.5
+ 13 done
+ 14 echo "Data saved. continue work"
+ 15 df -h >> /tmp/test/mydate.txt
+ 16 mkdir -p /opt/mydate
+ 17 cp /tmp/test/mydate.txt /opt/mydate/newmydate.txt
+ 18 for i in {5..1}; do
+ 19 echo "Waiting: $i sec"
+ 20 sleep 1
+ 21 done
+ 22 echo "Well done Boss"
+ 23 export PATH=$PATH:$pwd  # эта команда не сработала
+

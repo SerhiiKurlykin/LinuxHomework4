@@ -1,0 +1,25 @@
+1 #!/bin/bash
+  2 current_date=$(date +"%d%m%y")
+  3 for i in {1..10}; do
+  4 touch "${i}${current_date}"
+  5 done
+  6 echo "Files with sequence numbers and date $current_date were created successfully."
+
+
+
+
+
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ ls
+bashscript.sh  create_sk.sh   info.txt          myarchive.sh          newcatalog  process.txt  script211024.sh   scriptCopy.sh      scriptDeleteFile.sh  sleeper.sh               test_dir
+counter_sk.sh  fullscript.sh  lessonfileSK.txt  myfirstbashscript.sh  output.txt  script01.sh  scriptCatalog.sh  scriptCountAdd.sh  serhii_script3.sh    task_Serhii_Kurlykin.sh  test.txt
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ chmod +x task_Serhii_Kurlykin.sh
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ vim task_Serhii_Kurlykin.sh
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ ./task_Serhii_Kurlykin.sh
+Files with sequence numbers and date 221024 were created successfully.
+[ec2-user@ip-172-31-33-20 serhii_kurlykin]$ ls
+10221024  3221024  6221024  9221024        create_sk.sh   lessonfileSK.txt      newcatalog   script01.sh       scriptCopy.sh        serhii_script3.sh        test_dir
+1221024   4221024  7221024  bashscript.sh  fullscript.sh  myarchive.sh          output.txt   script211024.sh   scriptCountAdd.sh    sleeper.sh               test.txt
+2221024   5221024  8221024  counter_sk.sh  info.txt       myfirstbashscript.sh  process.txt  scriptCatalog.sh  scriptDeleteFile.sh  task_Serhii_Kurlykin.sh
+
+
+# */15 * * * */opt/130824_morning/serhii_kurlykin/task_Serhii_Kurlykin.sh
